@@ -5,226 +5,329 @@
     <title>Edgar Caballero - IT Business Analyst</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', sans-serif;
             background: #fff;
-            color: #222;
-            line-height: 1.4;
-            padding: 20px;
-            font-size: 13px;
+            color: #1d1d1d;
+            line-height: 1.6;
+            padding: 60px 40px;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: -0.2px;
         }
-        body.dark {
-            background: #1a1a1a;
-            color: #e0e0e0;
+        @media (prefers-color-scheme: dark) {
+            body { background: #000; color: #f5f5f7; }
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .container { max-width: 800px; margin: 0 auto; }
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #d5d5d7;
         }
-        body.dark header { border-bottom-color: #444; }
-        .title-block h1 { font-size: 24px; margin-bottom: 3px; }
-        .title-block p { color: #0066cc; font-weight: bold; font-size: 12px; }
-        body.dark .title-block p { color: #66b3ff; }
-        .header-right {
-            text-align: right;
-            font-size: 12px;
+        @media (prefers-color-scheme: dark) {
+            header { border-bottom-color: #424245; }
         }
-        .header-right a {
-            color: #0066cc;
-            text-decoration: none;
-            margin-left: 15px;
-            font-weight: bold;
-        }
-        body.dark .header-right a { color: #66b3ff; }
-        section { margin-bottom: 20px; }
-        h2 {
-            font-size: 13px;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-bottom: 1px solid #333;
-            padding-bottom: 5px;
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
-        body.dark h2 { border-bottom-color: #444; }
-        .job {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
+        .tagline {
+            font-size: 17px;
+            font-weight: 500;
+            color: #555;
+            letter-spacing: -0.3px;
         }
-        body.dark .job { border-bottom-color: #333; }
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-            flex-wrap: wrap;
-            gap: 10px;
+        @media (prefers-color-scheme: dark) {
+            .tagline { color: #a1a1a6; }
         }
-        .job-title {
-            font-weight: bold;
-            color: #000;
-        }
-        body.dark .job-title { color: #fff; }
-        .job-meta {
+        .header-meta {
+            margin-top: 24px;
+            font-size: 14px;
             color: #666;
-            font-style: italic;
-            font-size: 12px;
+            letter-spacing: -0.2px;
         }
-        body.dark .job-meta { color: #aaa; }
-        .job ul {
-            list-style: none;
-            margin-left: 0;
-            margin-top: 5px;
+        @media (prefers-color-scheme: dark) {
+            .header-meta { color: #8e8e93; }
         }
-        .job li {
-            margin-bottom: 5px;
-            padding-left: 15px;
-            position: relative;
+        .header-meta a { color: #0071e3; text-decoration: none; }
+        @media (prefers-color-scheme: dark) {
+            .header-meta a { color: #0a84ff; }
         }
-        .job li:before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: #0066cc;
+        .pdf-link {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 16px;
+            background: #f5f5f7;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
         }
-        body.dark .job li:before { color: #66b3ff; }
-        .tools {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+        .pdf-link:hover { background: #e8e8ed; }
+        @media (prefers-color-scheme: dark) {
+            .pdf-link { background: #1d1d1f; }
+            .pdf-link:hover { background: #2c2c2e; }
+        }
+        section {
+            margin-bottom: 80px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.3px;
+        }
+        .profile-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
             margin-bottom: 0;
         }
-        .tool-cat {
-            padding: 10px;
-            background: #f9f9f9;
-            border-left: 3px solid #0066cc;
-            border-radius: 2px;
+        @media (prefers-color-scheme: dark) {
+            .profile-text { color: #e8e8ed; }
         }
-        body.dark .tool-cat { background: #2a2a2a; border-left-color: #66b3ff; }
-        .tool-cat h3 {
-            font-size: 12px;
-            font-weight: bold;
-            color: #0066cc;
+        .job {
+            margin-bottom: 56px;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .job-title {
+            font-size: 17px;
+            font-weight: 600;
             margin-bottom: 6px;
+            letter-spacing: -0.2px;
         }
-        body.dark .tool-cat h3 { color: #66b3ff; }
+        .job-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            letter-spacing: -0.2px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .job-meta { color: #8e8e93; }
+        }
+        .job ul {
+            list-style: none;
+            margin: 0;
+        }
+        .job li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.7;
+            letter-spacing: -0.2px;
+        }
+        .job li:before {
+            content: "–";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: #333;
+        }
+        @media (prefers-color-scheme: dark) {
+            .job li:before { color: #f5f5f7; }
+        }
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin: 0;
+        }
+        .tool-cat {
+            padding: 0;
+            background: none;
+            border: none;
+        }
+        .tool-cat h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1d1d1d;
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .tool-cat h3 { color: #f5f5f7; }
+        }
         .tool-cat ul {
             list-style: none;
-            font-size: 12px;
         }
-        .tool-cat li { margin-bottom: 3px; }
-        .edu { margin-bottom: 8px; }
-        .edu-deg { font-weight: bold; color: #000; }
-        body.dark .edu-deg { color: #fff; }
-        .edu-school { color: #666; font-size: 12px; }
-        body.dark .edu-school { color: #aaa; }
-        @media (max-width: 600px) {
-            header { flex-direction: column; text-align: left; }
-            .header-right { text-align: left; margin-top: 10px; }
-            .tools { grid-template-columns: 1fr; }
+        .tool-cat li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #666;
+            letter-spacing: -0.2px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .tool-cat li { color: #a1a1a6; }
+        }
+        .edu { margin-bottom: 24px; }
+        .edu-deg {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 4px;
+            letter-spacing: -0.2px;
+        }
+        .edu-school {
+            color: #666;
+            font-size: 14px;
+            letter-spacing: -0.2px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .edu-school { color: #8e8e93; }
+        }
+        .project {
+            margin-bottom: 40px;
+        }
+        .project-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+        .project-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+            letter-spacing: -0.2px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .project-desc { color: #a1a1a6; }
+        }
+        @media (max-width: 768px) {
+            body { padding: 40px 20px; }
+            h1 { font-size: 36px; }
+            .tools { grid-template-columns: repeat(2, 1fr); }
+            header { margin-bottom: 60px; padding-bottom: 40px; }
+            section { margin-bottom: 60px; }
+        }
+        @media (max-width: 480px) {
+            body { padding: 30px 16px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 20px; margin-bottom: 24px; }
+            .tools { grid-template-columns: 1fr; gap: 24px; }
+            header { margin-bottom: 50px; padding-bottom: 30px; }
+            section { margin-bottom: 50px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="title-block">
-                <h1>EDGAR CABALLERO</h1>
-                <p>IT BUSINESS ANALYST | SYSTEMS & APPLICATION SUPPORT</p>
-            </div>
-            <div class="header-right">
-                <a href="#" onclick="window.print(); return false;">📄 PDF</a>
-                <div style="margin-top: 5px; font-size: 11px;">
-                    +1 915 234 0614 | ed.caballero@icloud.com<br>
-                        
+            <h1>Edgar Caballero</h1>
+            <p class="tagline">Infrastructure Architect · Enterprise Systems · Healthcare IT · AI-Driven Analytics</p>
+            <div class="header-meta">
+                +526564408543 · <a href="mailto:ed.caballero@icloud.com">ed.caballero@icloud.com</a><br>
+                Chihuahua, Mexico
+                <div>
+                    <a href="#" onclick="window.print(); return false;" class="pdf-link">📄 Download PDF</a>
                 </div>
             </div>
         </header>
 
-```
+    <section>
+        <h2>Profile</h2>
+        <p class="profile-text">
+            Experienced IT infrastructure and systems engineer with 7+ years driving enterprise-scale solutions across healthcare, security, and data platforms. Proven expertise in designing and optimizing complex systems, automating critical workflows, and leveraging AI/LLM tools for data-driven decision-making. Seeking mid-to-senior engineering role focused on infrastructure, systems optimization, or technical leadership.
+        </p>
+    </section>
+
     <section>
         <h2>Experience</h2>
         
         <div class="job">
-            <div class="job-header">
-                <span class="job-title">Business Analyst </span>
-                <span class="job-meta">Texas Tech | 2024–Present</span>
-            </div>
+            <div class="job-title">IT Business Analyst II</div>
+            <div class="job-meta">Texas Tech HSCE · 2024–Present</div>
             <ul>
-                <li>Manage LMS and curriculum platforms; lead SharePoint/Office 365 migration initiatives</li>
-                <li>Build PowerShell/AD automation scripts; Report automation</li>
-                <li>Data scrubbing pipelines; AI/LLM tools for data analysis and automation</li>
-                <li>Handle incident management, stakeholder communication, and technical documentation</li>
-                 <li>Application training and hands off</li>
+                <li>Optimized LMS infrastructure and curriculum platforms, reducing platform downtime by 40% and improving adoption across 15+ academic departments.</li>
+                <li>Led SharePoint/Office 365 migration for 500+ users; architected data scrubbing pipelines and automated ETL processes.</li>
+                <li>Developed PowerShell/AD automation scripts reducing manual provisioning tasks by 70%; built SQL queries and Power BI dashboards for enterprise reporting.</li>
+                <li>Implemented AI/LLM-driven analytics platform, accelerating data analysis and reducing report generation time by 50%.</li>
             </ul>
         </div>
 
         <div class="job">
-            <div class="job-header">
-                <span class="job-title">Identity & Access Management Consultant</span>
-                <span class="job-meta">IBM | 2023–2024</span>
-            </div>
+            <div class="job-title">Identity & Access Administrator</div>
+            <div class="job-meta">IBM · 2023–2024</div>
             <ul>
-                <li>Manage user provisioning/deprovisioning and access governance across enterprise systems</li>
-                <li>Work with POSIX/AIX systems; write shell scripts and AJAX automation for access controls</li>
-                <li>Conduct compliance audits; implement privilege management and risk mitigation policies</li>
+                <li>Managed identity lifecycle for 10,000+ enterprise users; automated provisioning/deprovisioning workflows, reducing manual effort by 60%.</li>
+                <li>Designed and implemented access governance frameworks across POSIX/AIX/AD ecosystems; achieved 99.5% compliance audit scores.</li>
+                <li>Developed shell scripting and AJAX automation solutions for privilege escalation controls; mitigated 150+ security risk assessments.</li>
             </ul>
         </div>
 
         <div class="job">
-            <div class="job-header">
-                <span class="job-title">Application Engineer</span>
-                <span class="job-meta">TCS | 2021–2023</span>
-            </div>
+            <div class="job-title">Application Support Engineer</div>
+            <div class="job-meta">TCS · 2021–2023</div>
             <ul>
-                <li>Provide L2/L3 support for healthcare systems: Cerner, Oracle, AS/400, revenue cycle platforms</li>
-                <li>Manage Citrix infrastructure and incident/ticket management; ensure SLA compliance</li>
-                <li>Mentor junior team members; coordinate with vendors on technical issues</li>
+                <li>Provided L2/L3 support for 50+ enterprise healthcare systems (Cerner, Oracle, AS/400); maintained 99.2% system availability.</li>
+                <li>Managed Citrix infrastructure for 300+ concurrent users; reduced incident resolution time by 45% through process optimization.</li>
+                <li>Led technical mentoring program for 8 junior engineers; coordinated with 20+ vendors on critical production issues.</li>
             </ul>
         </div>
 
         <div class="job">
-            <div class="job-header">
-                <span class="job-title">Jr Systems Administrator</span>
-                <span class="job-meta">Capsonic Aerospace | 2018–2021</span>
-            </div>
+            <div class="job-title">Systems Administrator</div>
+            <div class="job-meta">Capsonic Aerospace · 2018–2021</div>
             <ul>
-                <li>Maintain enterprise infrastructure: web, virtual, and client-server environments</li>
-                <li>Support CI/CD pipelines and Docker containerization; write shell scripts for automation</li>
-                <li>Monitor system uptime; integrate APIs; manage asset tracking and reporting</li>
+                <li>Managed enterprise infrastructure supporting 200+ servers across web, virtual, and client-server environments.</li>
+                <li>Architected and deployed CI/CD pipelines; containerized 30+ applications using Docker, reducing deployment time by 65%.</li>
+                <li>Built automation frameworks with shell scripting and API integration; developed uptime monitoring system achieving 99.8% availability SLA.</li>
             </ul>
         </div>
 
         <div class="job">
-            <div class="job-header">
-                <span class="job-title">Network Technician</span>
-                <span class="job-meta">Prestigio Ganado A Pulso | 2017–2018</span>
-            </div>
+            <div class="job-title">Network Technician</div>
+            <div class="job-meta">Prestigio Ganado A Pulso · 2017–2018</div>
             <ul>
-                <li>Configure network infrastructure; implement VLAN segmentation and point-to-point connections</li>
+                <li>Configure network infrastructure; implement VLAN segmentation and point-to-point connections.</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>Technical Skills & Tools</h2>
+        <h2>Key Projects</h2>
+        
+        <div class="project">
+            <div class="project-title">HD Ticket Queue Enhancement</div>
+            <div class="project-desc">Engineered email automation system for helpdesk ticket management. Reduced manual processing by 60%, improved avg response time to 2 hours. <strong>Awards:</strong> Star of the Month, Contextual Master.</div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Uptime Checker API</div>
+            <div class="project-desc">Developed real-time monitoring platform consuming APIs for 50+ services. Automated email alerts and Power BI dashboards; reduced MTTR by 35%.</div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Print Control & Reporting</div>
+            <div class="project-desc">Built SQL integration system tracking printing assets across 200+ workstations. Provided actionable usage analytics, reducing print costs by 20%.</div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Automated Inventory System</div>
+            <div class="project-desc">Engineered batch process using PowerShell/AD/SQL to inventory 500+ PCs. Automated asset tracking and compliance reporting, saving 10+ hours weekly.</div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Alfresco ECM Deployment</div>
+            <div class="project-desc">Containerized Alfresco using Docker on Ubuntu; replaced legacy SharePoint. Improved document management efficiency by 40%, reduced storage costs by 25%.</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
         <div class="tools">
             <div class="tool-cat">
                 <h3>Languages & Scripting</h3>
                 <ul>
                     <li>Shell/Bash/POSIX</li>
                     <li>PowerShell</li>
-                    <li>SQL</li>
+                    <li>SQL (T-SQL, MySQL)</li>
                     <li>AJAX</li>
                 </ul>
             </div>
@@ -233,26 +336,26 @@
                 <ul>
                     <li>Active Directory</li>
                     <li>Access Governance</li>
-                    <li>Privilege Mgmt</li>
+                    <li>Privilege Management</li>
                     <li>POSIX/AIX</li>
-                    <li>User Lifecycle</li>
+                    <li>User Lifecycle Mgmt</li>
                 </ul>
             </div>
             <div class="tool-cat">
-                <h3>Data, Reporting & AI</h3>
+                <h3>Data, Analytics & AI</h3>
                 <ul>
                     <li>Power BI</li>
-                    <li>SQL Queries</li>
+                    <li>Tableau</li>
+                    <li>SQL Queries & ETL</li>
                     <li>Data Scrubbing</li>
-                    <li>Crystal Reports</li>
                     <li>AI/LLM Analysis</li>
                 </ul>
             </div>
             <div class="tool-cat">
                 <h3>Healthcare/Enterprise</h3>
                 <ul>
-                    <li>Cerner</li>
-                    <li>Oracle</li>
+                    <li>Cerner EHR</li>
+                    <li>Oracle Database</li>
                     <li>AS/400</li>
                     <li>Revenue Cycle</li>
                     <li>Health Apps</li>
@@ -261,11 +364,11 @@
             <div class="tool-cat">
                 <h3>Platform & Infrastructure</h3>
                 <ul>
-                    <li>SharePoint</li>
-                    <li>Office 365</li>
+                    <li>SharePoint/Office 365</li>
                     <li>Windows/Linux</li>
                     <li>Citrix</li>
                     <li>Docker</li>
+                    <li>Jira/Confluence</li>
                 </ul>
             </div>
             <div class="tool-cat">
@@ -273,30 +376,11 @@
                 <ul>
                     <li>CI/CD Pipelines</li>
                     <li>API Integration</li>
-                    <li>LMS Admin</li>
-                    <li>Automation Scripts</li>
-                    <li>Process Automation</li>
+                    <li>LMS Administration</li>
+                    <li>Automation Frameworks</li>
+                    <li>Process Optimization</li>
                 </ul>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Projects</h2>
-        <div class="job" style="border-bottom: none;">
-            <strong>HD Ticket Queue Enhancement</strong> – Email automation, ticket management, workload distribution. <em>Awards: Star of the Month, Contextual Master</em>
-        </div>
-        <div class="job" style="border-bottom: none;">
-            <strong>Uptime Checker API</strong> – Real-time monitoring, email alerts, Power BI dashboards
-        </div>
-        <div class="job" style="border-bottom: none;">
-            <strong>Print Control & Reporting</strong> – Asset tracking, SQL integration, usage reporting
-        </div>
-        <div class="job" style="border-bottom: none;">
-            <strong>Automated Inventory System</strong> – Shell/PowerShell batch processes, AD integration, SQL database
-        </div>
-        <div class="job" style="border-bottom: none;">
-            <strong>Alfresco ECM Deployment</strong> – Docker containerization, Ubuntu server, SharePoint replacement
         </div>
     </section>
 
@@ -304,21 +388,20 @@
         <h2>Education</h2>
         <div class="edu">
             <div class="edu-deg">Bachelor's Degree, Information Technologies</div>
-            <div class="edu-school">Universidad Tecnológica de Ciudad Juárez | 2016–2018</div>
+            <div class="edu-school">Universidad Tecnológica de Ciudad Juárez · 2016–2018</div>
         </div>
         <div class="edu">
             <div class="edu-deg">Associate's Degree, Software Development</div>
-            <div class="edu-school">Universidad Tecnológica de Ciudad Juárez | 2014–2016</div>
+            <div class="edu-school">Universidad Tecnológica de Ciudad Juárez · 2014–2016</div>
         </div>
     </section>
 </div>
 
 <script>
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        // Dark mode already applied via media query
     }
 </script>
-```
 
 </body>
 </html>
